@@ -1,64 +1,48 @@
-import { Component } from "react";
-import React from "react";
-import {Route} from "react-router-dom";
-import WeatherSearch from './WeatherSearch';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import Weather from "./Weather";
 
-export default class App extends Component{
-render(){
-    return(
-        <div>
-<Route
-exact={true}
-path="/"
-render={() =>(
-    <div className="App">
-        <WeatherSearch city ="London" />
-    </div>
-)
-}
-/>
-
-<Route
-exact={true}
-path="/"
-render={() =>(
-    <div className="App">
-        <WeatherSearch city ="Singapore" />
-    </div>
-)
-}
-/>
-<Route
-exact={true}
-path="/"
-render={() =>(
-    <div className="App">
-        <WeatherSearch city ="Seoul" />
-    </div>
-)
-}
-/>
-<Route
-exact={true}
-path="/"
-render={() =>(
-    <div className="App">
-        <WeatherSearch city ="Hong Kong" />
-    </div>
-)
-}
-/>
-<Route
-exact={true}
-path="/"
-render={() =>(
-    <div className="App">
-        <WeatherSearch city ="New York" />
-    </div>
-)
-}
-/>
-        </div>
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <Route
+          exact={true}
+          path="/"
+          render={() => (
+            <div className="App">
+              <Weather city="lisbon" />
+            </div>
+          )}
+        />
+        <Route
+          exact={true}
+          path="/paris"
+          render={() => (
+            <div className="App">
+              <Weather city="Paris" />
+            </div>
+          )}
+        />
+        <Route
+          exact={true}
+          path="/sydney"
+          render={() => (
+            <div className="App">
+              <Weather city="Sydney" />
+            </div>
+          )}
+        />
+        <Route
+          exact={true}
+          path="/san-francisco"
+          render={() => (
+            <div className="App">
+              <Weather city="San Francisco" />
+            </div>
+          )}
+        />
+      </div>
     );
-}
+  }
 }

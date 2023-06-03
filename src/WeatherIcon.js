@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import ReactAnimatedWeather from "react-animated-weather";
-import ProTypes from "prop-types";
+import PropTypes from "prop-types";
 
-export default class WeatherIcon extends Component{
-static ProTypes ={iconName : ProTypes.string.isRequired};
+export default class WeatherIcon extends Component {
+  static propTypes = { iconName: PropTypes.string.isRequired };
 
-iconMatching = {
+  iconMatching = {
     "01d": "CLEAR_DAY",
     "01n": "CLEAR_NIGHT",
     "02d": "PARTLY_CLOUDY_DAY",
@@ -26,13 +26,14 @@ iconMatching = {
     "50n": "FOG"
   };
 
-  render(){
-    return(
-    <ReactAnimatedWeather icon ={this.iconMatching[this.props.iconName]}
-    color="#000"
-    size={38}
-    animate={true}
-    />
+  render() {
+    return (
+      <ReactAnimatedWeather
+        icon={this.iconMatching[this.props.iconName]}
+        color="#000"
+        size={38}
+        animate={true}
+      />
     );
   }
 }
